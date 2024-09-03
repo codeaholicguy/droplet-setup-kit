@@ -47,13 +47,6 @@ sudo nginx -t
 # Reload Nginx to apply changes
 sudo systemctl reload nginx
 
-echo "Setting up SSL certificate..."
-sudo certbot --nginx -d $SERVER_NAME
-sudo certbot renew --dry-run
-
-echo "Restarting Nginx..."
-sudo systemctl restart nginx
-
 echo "Installation and setup complete!"
 echo "Your app has been cloned to /var/www/$SERVER_NAME"
 echo "Remember to set up your Node.js app and start it with PM2"
